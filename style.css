@@ -95,6 +95,37 @@ body{
     letter-spacing:1.5px;
 }
 
+.socials{
+margin-top:60px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.socials a{
+color:#8b6b5c;
+border:1px solid #8b6b5c;
+width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+font-size:18px;
+transition: all 0.3s ease;
+text-decoration:none;
+}
+
+.socials a:hover{
+background:#8b6b5c;
+color:#000;
+transform:translateY(-5px);
+box-shadow:0 0 10px rgba(139,107,92,0.6);
+}
+
+
+
 /* ================= FOOTER ================= */
 
 .footer{
@@ -118,4 +149,15 @@ body{
     .time-box{
         padding:8px 10px;
     }
+    .socials{
+gap:15px;
+margin-top:40px;
+}
+
+.socials a{
+width:40px;
+height:40px;
+font-size:16px;
+}
+
 }
