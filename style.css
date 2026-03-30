@@ -1,0 +1,225 @@
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+background:#000;
+color:white;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+font-family: 'Inter', sans-serif;
+
+}
+
+.container{
+max-width:1000px;
+padding:40px;
+text-align: center;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto;
+}
+
+.logo-img{
+    width:100%;
+    max-width:550px;   /* desktop */
+    height:auto;
+    display:block;
+    object-fit:contain;
+    margin-bottom: 0;
+}
+/* SUB MENU */
+
+.services{
+
+margin-top:0;
+color:#8b6b5c;
+letter-spacing:3px;
+font-size:18px;
+
+}
+
+/* FRASE PRINCIPAL */
+
+.main-text{
+
+margin-top:80px;
+font-size:30px;
+font-weight:600;
+line-height:1.4;
+max-width:900px;
+margin-left:auto;
+margin-right:auto;
+
+}
+
+
+/* CONTADOR */
+
+.countdown{
+
+margin-top:60px;
+display:flex;
+justify-content:center;
+gap:30px;
+
+}
+
+.time-box{
+
+border:1px solid #8b6b5c;
+padding:15px 20px;
+border-radius:6px;
+min-width:80px;
+
+}
+
+.time-box span{
+
+font-size:28px;
+font-weight:600;
+display:block;
+
+}
+
+.time-box small{
+
+color:#8b6b5c;
+font-size:12px;
+letter-spacing:2px;
+
+}
+
+
+/* FOOTER */
+
+.footer{
+
+margin-top:70px;
+color:#8b6b5c;
+font-size:16px;
+line-height:1.6;
+
+}
+
+
+/* ================= TABLET ================= */
+@media screen and (max-width: 1024px){
+
+    .logo{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin:0 auto;
+    }
+
+    .logo-img{
+        width:100%;
+        max-width:420px;   /* desktop */
+        height:auto;
+        display:block;
+        object-fit:contain;
+    }
+
+    .main-text{
+        font-size:24px;
+        margin-top:60px;
+        max-width:600px;
+    }
+
+    .countdown{
+        gap:20px;
+    }
+
+    .time-box{
+        min-width:70px;
+        padding:12px 15px;
+    }
+
+    .time-box span{
+        font-size:22px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+@media screen and (max-width: 767px){
+
+    body{
+        padding:20px;
+        height:auto;
+    }
+
+    .container{
+        width:100%;
+        padding:20px 10px;
+    }
+
+    /* LOGO */
+    .logo{
+        text-align:center;
+        margin-top: 30px;
+        max-width: 240px;
+    }
+    /* SERVICES */
+    .services{
+        font-size:14px;
+        letter-spacing:2px;
+        margin-top:15px;
+    }
+
+    /* TEXTO PRINCIPAL */
+    .main-text{
+        font-size:18px;
+        margin-top:40px;
+        line-height:1.5;
+        padding:0 10px;
+    }
+
+    /* CONTADOR */
+    .countdown{
+        flex-wrap:wrap;
+        gap:12px;
+        margin-top:40px;
+    }
+
+    .time-box{
+        flex:1 1 40%;
+        min-width:100px;
+        padding:10px;
+    }
+
+    .time-box span{
+        font-size:20px;
+    }
+
+    .time-box small{
+        font-size:10px;
+    }
+
+    /* FOOTER */
+    .footer{
+        font-size:13px;
+        margin-top:80px;
+        padding:0 10px;
+    }
+
+}
+
+.main-text{
+    text-wrap: balance;
+}

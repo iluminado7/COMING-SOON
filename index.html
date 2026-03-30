@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO HARVEY | Coming Soon</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="logo">
+    <img src="img/Go Harvey® - LogoGrande.png" alt="GO-HARVEY" class="logo-img">
+</div>
+
+<div class="services">
+CONSULTING | BUSINESS | TECH + IA | ACADEMY | COMPLIANCE
+</div>
+
+<div class="main-text">
+El futuro de las empresas que buscan expandirse,<br>
+se está construyendo aquí.
+</div>
+
+<div class="countdown">
+
+<div class="time-box">
+<span id="days">00</span>
+<small>DÍAS</small>
+</div>
+
+<div class="time-box">
+<span id="hours">00</span>
+<small>HORAS</small>
+</div>
+
+<div class="time-box">
+<span id="minutes">00</span>
+<small>MIN</small>
+</div>
+
+<div class="time-box">
+<span id="seconds">00</span>
+<small>SEG</small>
+</div>
+
+</div>
+
+<div class="footer">
+
+Building solutions for companies looking to expand.<br>
+The official website of Go Harvey® is coming soon.<br>
+Copyright © 2026 Go Harvey S.A.S. – All rights reserved.
+
+</div>
+
+</div>
+
+<script>
+
+const targetDate = new Date("April 1, 2026 00:00:00").getTime()
+
+setInterval(function(){
+
+const now = new Date().getTime()
+
+const distance = targetDate - now
+
+const days = Math.floor(distance / (1000*60*60*24))
+const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60))
+const minutes = Math.floor((distance%(1000*60*60))/(1000*60))
+const seconds = Math.floor((distance%(1000*60))/1000)
+
+document.getElementById("days").innerHTML = days
+document.getElementById("hours").innerHTML = hours
+document.getElementById("minutes").innerHTML = minutes
+document.getElementById("seconds").innerHTML = seconds
+
+},1000)
+
+</script>
+
+
+</body>
+</html>
