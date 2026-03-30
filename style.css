@@ -1,225 +1,121 @@
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 body{
+    background:#000;
+    color:white;
+    font-family:'Inter', sans-serif;
 
-background:#000;
-color:white;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-font-family: 'Inter', sans-serif;
+    /* CLAVE: evitar cortes */
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
+    padding:20px;
 }
 
+/* CONTENEDOR GENERAL */
 .container{
-max-width:1000px;
-padding:40px;
-text-align: center;
+    width:100%;
+    max-width:1000px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:20px; /* reemplaza margins grandes */
+    text-align:center;
 }
 
-/* LOGO */
+/* ================= LOGO ================= */
 
 .logo{
     display:flex;
     justify-content:center;
     align-items:center;
-    margin:0 auto;
+    width:100%;
 }
 
 .logo-img{
     width:100%;
-    max-width:550px;   /* desktop */
+    max-width:clamp(180px, 35vw, 420px); /* escala automático */
     height:auto;
-    display:block;
     object-fit:contain;
-    margin-bottom: 0;
 }
-/* SUB MENU */
+
+/* ================= SERVICES ================= */
 
 .services{
-
-margin-top:0;
-color:#8b6b5c;
-letter-spacing:3px;
-font-size:18px;
-
+    color:#8b6b5c;
+    letter-spacing:2px;
+    font-size:clamp(12px, 1.5vw, 16px);
 }
 
-/* FRASE PRINCIPAL */
+/* ================= TEXTO PRINCIPAL ================= */
 
 .main-text{
-
-margin-top:80px;
-font-size:30px;
-font-weight:600;
-line-height:1.4;
-max-width:900px;
-margin-left:auto;
-margin-right:auto;
-
+    font-size:clamp(16px, 2.2vw, 26px);
+    font-weight:600;
+    line-height:1.4;
+    max-width:700px;
+    text-wrap:balance;
 }
 
-
-/* CONTADOR */
+/* ================= CONTADOR ================= */
 
 .countdown{
-
-margin-top:60px;
-display:flex;
-justify-content:center;
-gap:30px;
-
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
 }
 
 .time-box{
+    border:1px solid #8b6b5c;
+    border-radius:6px;
 
-border:1px solid #8b6b5c;
-padding:15px 20px;
-border-radius:6px;
-min-width:80px;
-
+    padding:10px 14px;
+    min-width:70px;
 }
 
 .time-box span{
-
-font-size:28px;
-font-weight:600;
-display:block;
-
+    font-size:clamp(18px, 2vw, 26px);
+    font-weight:600;
+    display:block;
 }
 
 .time-box small{
-
-color:#8b6b5c;
-font-size:12px;
-letter-spacing:2px;
-
+    color:#8b6b5c;
+    font-size:10px;
+    letter-spacing:1.5px;
 }
 
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 .footer{
-
-margin-top:70px;
-color:#8b6b5c;
-font-size:16px;
-line-height:1.6;
-
+    color:#8b6b5c;
+    font-size:clamp(12px, 1.5vw, 15px);
+    line-height:1.5;
+    max-width:600px;
 }
 
+/* ================= AJUSTE EXTRA PARA PANTALLAS MUY CHICAS ================= */
 
-/* ================= TABLET ================= */
-@media screen and (max-width: 1024px){
-
-    .logo{
-        display:flex;
-        justify-content:center;
-        align-items:center;
-        margin:0 auto;
-    }
-
-    .logo-img{
-        width:100%;
-        max-width:420px;   /* desktop */
-        height:auto;
-        display:block;
-        object-fit:contain;
-    }
-
-    .main-text{
-        font-size:24px;
-        margin-top:60px;
-        max-width:600px;
-    }
-
-    .countdown{
-        gap:20px;
-    }
-
-    .time-box{
-        min-width:70px;
-        padding:12px 15px;
-    }
-
-    .time-box span{
-        font-size:22px;
-    }
-
-}
-
-
-/* ================= MOBILE ================= */
-@media screen and (max-width: 767px){
-
-    body{
-        padding:20px;
-        height:auto;
-    }
-
+@media (max-height: 700px){
     .container{
-        width:100%;
-        padding:20px 10px;
+        gap:15px;
     }
 
-    /* LOGO */
-    .logo{
-        text-align:center;
-        margin-top: 30px;
-        max-width: 240px;
-    }
-    /* SERVICES */
-    .services{
-        font-size:14px;
-        letter-spacing:2px;
-        margin-top:15px;
-    }
-
-    /* TEXTO PRINCIPAL */
     .main-text{
-        font-size:18px;
-        margin-top:40px;
-        line-height:1.5;
-        padding:0 10px;
-    }
-
-    /* CONTADOR */
-    .countdown{
-        flex-wrap:wrap;
-        gap:12px;
-        margin-top:40px;
+        font-size:16px;
     }
 
     .time-box{
-        flex:1 1 40%;
-        min-width:100px;
-        padding:10px;
+        padding:8px 10px;
     }
-
-    .time-box span{
-        font-size:20px;
-    }
-
-    .time-box small{
-        font-size:10px;
-    }
-
-    /* FOOTER */
-    .footer{
-        font-size:13px;
-        margin-top:80px;
-        padding:0 10px;
-    }
-
-}
-
-.main-text{
-    text-wrap: balance;
 }
