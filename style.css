@@ -8,20 +8,18 @@ body{
     background:#000;
     color:white;
     font-family:'Inter', sans-serif;
-
     /* CLAVE: evitar cortes */
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-
     padding:20px;
 }
 
 /* CONTENEDOR GENERAL */
 .container{
     width:100%;
-    max-width:1000px;
+    max-width:1200px;
 
     display:flex;
     flex-direction:column;
@@ -31,133 +29,91 @@ body{
     gap:20px; /* reemplaza margins grandes */
     text-align:center;
 }
-
-/* ================= LOGO ================= */
-
-.logo{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    width:100%;
-}
-
-.logo-img{
-    width:100%;
-    max-width:clamp(180px, 35vw, 420px); /* escala automático */
-    height:auto;
-    object-fit:contain;
-}
-
 /* ================= SERVICES ================= */
 
 .services{
     color:#8b6b5c;
-    letter-spacing:2px;
-    font-size:clamp(12px, 1.5vw, 16px);
+    text-transform:uppercase;
+    opacity:0.85;
+    font-size:clamp(14px, 1.8vw, 18px);
+    letter-spacing:2.5px;
 }
 
 /* ================= TEXTO PRINCIPAL ================= */
 
 .main-text{
-    font-size:clamp(16px, 2.2vw, 26px);
-    font-weight:600;
-    line-height:1.4;
-    max-width:700px;
+    font-size:clamp(22px, 3vw, 36px);
+    line-height:1.5;
+    max-width:850px;
+    font-weight:800;
     text-wrap:balance;
+    margin-top:10px;
 }
 
-/* ================= CONTADOR ================= */
-
-.countdown{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.time-box{
-    border:1px solid #8b6b5c;
-    border-radius:6px;
-
-    padding:10px 14px;
-    min-width:70px;
-}
-
-.time-box span{
-    font-size:clamp(18px, 2vw, 26px);
-    font-weight:600;
-    display:block;
-}
-
-.time-box small{
-    color:#8b6b5c;
-    font-size:10px;
-    letter-spacing:1.5px;
-}
+/* ================= SOCIALS ================= */
 
 .socials{
-margin-top:60px;
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+    display:flex;
+    margin-top:60px;
+    gap:22px;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
 .socials a{
-color:#8b6b5c;
-border:1px solid #8b6b5c;
-width:45px;
-height:45px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-font-size:18px;
-transition: all 0.3s ease;
-text-decoration:none;
+    color:#8b6b5c;
+    border:1px solid #8b6b5c;
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
+
+    transition: transform .3s ease, 
+                background .3s ease, 
+                color .3s ease, 
+                box-shadow .3s ease;
 }
 
+/* 👇 HOVER MÁS FINO */
 .socials a:hover{
-background:#8b6b5c;
-color:#000;
-transform:translateY(-5px);
-box-shadow:0 0 10px rgba(139,107,92,0.6);
+    background:#8b6b5c;
+    color:#000;
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 8px 18px rgba(139,107,92,0.25);
 }
-
-
 
 /* ================= FOOTER ================= */
 
 .footer{
     color:#8b6b5c;
-    font-size:clamp(12px, 1.5vw, 15px);
-    line-height:1.5;
-    max-width:600px;
+    font-size:clamp(13px, 1.6vw, 17px);
+    max-width:700px;
+    line-height:1.6;
+    margin-top:20px;
+    opacity:0.8;
 }
 
-/* ================= AJUSTE EXTRA PARA PANTALLAS MUY CHICAS ================= */
+/* ================= EFECTO FADE IN (PRO) ================= */
 
-@media (max-height: 700px){
-    .container{
-        gap:15px;
-    }
-
-    .main-text{
-        font-size:16px;
-    }
-
-    .time-box{
-        padding:8px 10px;
-    }
-    .socials{
-gap:15px;
-margin-top:40px;
+.container > *{
+    opacity:0;
+    transform:translateY(20px);
+    animation:fadeUp 0.8s ease forwards;
 }
 
-.socials a{
-width:40px;
-height:40px;
-font-size:16px;
-}
+.container > *:nth-child(1){ animation-delay:0.2s; }
+.container > *:nth-child(2){ animation-delay:0.4s; }
+.container > *:nth-child(3){ animation-delay:0.6s; }
+.container > *:nth-child(4){ animation-delay:0.8s; }
+.container > *:nth-child(5){ animation-delay:1s; }
 
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
