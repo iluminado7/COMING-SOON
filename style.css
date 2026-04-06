@@ -55,7 +55,7 @@ body{
 .socials{
     display:flex;
     margin-top:60px;
-    gap:22px;
+    gap:20px;
     justify-content:center;
     flex-wrap:wrap;
 }
@@ -63,13 +63,13 @@ body{
 .socials a{
     color:#8b6b5c;
     border:1px solid #8b6b5c;
-    width:52px;
-    height:52px;
+    width:48px;
+    height:48px;
     display:flex;
     align-items:center;
     justify-content:center;
     border-radius:50%;
-    font-size:20px;
+    font-size:18px;
     text-decoration:none;
 
     transition: transform .3s ease, 
