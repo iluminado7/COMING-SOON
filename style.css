@@ -1,119 +1,195 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background:#000;
-    color:white;
-    font-family:'Inter', sans-serif;
-    /* CLAVE: evitar cortes */
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+body {
+  background: #000;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-/* CONTENEDOR GENERAL */
-.container{
-    width:100%;
-    max-width:1200px;
+/* ================= CONTENEDOR GENERAL ================= */
 
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    gap:20px; /* reemplaza margins grandes */
-    text-align:center;
+.container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
 }
+
+/* ================= LOGO ================= */
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo img {
+  width: clamp(180px, 30vw, 340px);
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
 /* ================= SERVICES ================= */
 
-.services{
-    color:#8b6b5c;
-    text-transform:uppercase;
-    opacity:0.85;
-    font-size:clamp(14px, 1.8vw, 18px);
-    letter-spacing:2.5px;
+.services {
+  color: #8b6b5c;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-size: clamp(11px, 1.5vw, 16px);
+  letter-spacing: 2.5px;
 }
 
 /* ================= TEXTO PRINCIPAL ================= */
 
-.main-text{
-    font-size:clamp(22px, 3vw, 36px);
-    line-height:1.5;
-    max-width:850px;
-    font-weight:800;
-    text-wrap:balance;
-    margin-top:10px;
+.main-text {
+  font-size: clamp(20px, 2.8vw, 34px);
+  line-height: 1.5;
+  max-width: 850px;
+  font-weight: 800;
+  text-wrap: balance;
+  margin-top: 6px;
+}
+
+/* ================= COUNTDOWN ================= */
+
+.countdown {
+  display: flex;
+  gap: clamp(0.6rem, 2vw, 1.2rem);
+  justify-content: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #8b6b5c;
+  width: clamp(72px, 10vw, 110px);
+  height: clamp(64px, 9vw, 96px);
+  border-radius: 4px;
+}
+
+.countdown-item span {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.countdown-item label {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.55rem, 1vw, 0.65rem);
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8b6b5c;
+  margin-top: 0.4rem;
 }
 
 /* ================= SOCIALS ================= */
 
-.socials{
-    display:flex;
-    margin-top:60px;
-    gap:20px;
-    justify-content:center;
-    flex-wrap:wrap;
+.socials {
+  display: flex;
+  margin-top: 40px;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.socials a{
-    color:#8b6b5c;
-    border:1px solid #8b6b5c;
-    width:48px;
-    height:48px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    font-size:18px;
-    text-decoration:none;
-
-    transition: transform .3s ease, 
-                background .3s ease, 
-                color .3s ease, 
-                box-shadow .3s ease;
+.socials a {
+  color: #8b6b5c;
+  border: 1px solid #8b6b5c;
+  width: clamp(40px, 5vw, 48px);
+  height: clamp(40px, 5vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: clamp(15px, 2vw, 18px);
+  text-decoration: none;
+  transition: transform .3s ease,
+              background .3s ease,
+              color .3s ease,
+              box-shadow .3s ease;
 }
 
-/* 👇 HOVER MÁS FINO */
-.socials a:hover{
-    background:#8b6b5c;
-    color:#000;
-    transform:translateY(-4px) scale(1.05);
-    box-shadow:0 8px 18px rgba(139,107,92,0.25);
+.socials a:hover {
+  background: #8b6b5c;
+  color: #000;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(139,107,92,0.25);
 }
 
 /* ================= FOOTER ================= */
 
-.footer{
-    color:#8b6b5c;
-    font-size:clamp(13px, 1.6vw, 17px);
-    max-width:700px;
-    line-height:1.6;
-    margin-top:20px;
-    opacity:0.8;
+.footer {
+  color: #8b6b5c;
+  font-size: clamp(12px, 1.4vw, 15px);
+  max-width: 700px;
+  line-height: 1.7;
+  margin-top: 20px;
+  opacity: 0.8;
 }
 
-/* ================= EFECTO FADE IN (PRO) ================= */
+/* ================= FADE IN ================= */
 
-.container > *{
-    opacity:0;
-    transform:translateY(20px);
-    animation:fadeUp 0.8s ease forwards;
+.container > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
 }
 
-.container > *:nth-child(1){ animation-delay:0.2s; }
-.container > *:nth-child(2){ animation-delay:0.4s; }
-.container > *:nth-child(3){ animation-delay:0.6s; }
-.container > *:nth-child(4){ animation-delay:0.8s; }
-.container > *:nth-child(5){ animation-delay:1s; }
+.container > *:nth-child(1) { animation-delay: 0.2s; }
+.container > *:nth-child(2) { animation-delay: 0.4s; }
+.container > *:nth-child(3) { animation-delay: 0.6s; }
+.container > *:nth-child(4) { animation-delay: 0.8s; }
+.container > *:nth-child(5) { animation-delay: 1.0s; }
+.container > *:nth-child(6) { animation-delay: 1.2s; }
 
-@keyframes fadeUp{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE MOBILE ================= */
+
+@media (max-width: 480px) {
+  .main-text br {
+    display: none;
+  }
+
+  .countdown {
+    gap: 0.5rem;
+  }
+
+  .countdown-item {
+    width: 68px;
+    height: 60px;
+  }
+
+  .socials {
+    gap: 12px;
+    margin-top: 24px;
+  }
 }

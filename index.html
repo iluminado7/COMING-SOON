@@ -10,9 +10,7 @@
 <title>GO HARVEY | Coming Soon</title>
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-<!-- ICONOS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
@@ -20,62 +18,72 @@
 
 <div class="container">
 
-<div class="services">
-CONSULTING | BUSINESS | TECH + IA | ACADEMY | COMPLIANCE
-</div>
+  <div class="logo">
+    <img src="img/GoHarveyLogo.png" alt="Go Harvey">
+  </div>
 
-<div class="main-text">
-El futuro de las empresas que buscan expandirse,<br>
-se está construyendo aquí.
-</div>
+  <div class="services">
+    CONSULTING | BUSINESS | TECH + IA | ACADEMY | COMPLIANCE
+  </div>
 
+  <div class="main-text">
+    El futuro de las empresas que buscan expandirse,<br>
+    se está construyendo aquí.
+  </div>
 
-<div class="socials">
+  <div class="countdown">
+    <div class="countdown-item">
+      <span id="days">00</span>
+      <label>Días</label>
+    </div>
+    <div class="countdown-item">
+      <span id="hours">00</span>
+      <label>Horas</label>
+    </div>
+    <div class="countdown-item">
+      <span id="minutes">00</span>
+      <label>Min</label>
+    </div>
+    <div class="countdown-item">
+      <span id="seconds">00</span>
+      <label>Seg</label>
+    </div>
+  </div>
 
-<a href="https://www.instagram.com/goharvey.com.ar/" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.linkedin.com/company/go-harvey%C2%AE/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://www.facebook.com/GoHarveyFanPage/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-<a href="https://ar.pinterest.com/GoHarveyAcademy/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
-<a href="https://wa.me/5491134007699" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <div class="socials">
+    <a href="https://www.instagram.com/goharvey.com.ar/" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.linkedin.com/company/go-harvey%C2%AE/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.facebook.com/GoHarveyFanPage/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://ar.pinterest.com/GoHarveyAcademy/" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+    <a href="https://wa.me/5491134007699" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  </div>
 
-</div>
-
-
-
-<div class="footer">
-
-Building solutions for companies looking to expand.<br>
-The official website is coming soon.<br>
-Copyright © 2026 Go Harvey S.A.S. – All rights reserved.
-
-</div>
+  <div class="footer">
+    Building solutions for companies looking to expand.<br>
+    The official website is coming soon.<br>
+    Copyright © 2026 Go Harvey S.A.S. – All rights reserved.
+  </div>
 
 </div>
 
 <script>
-
-const targetDate = new Date("April 10, 2026 00:00:00").getTime()
+const targetDate = new Date("May 10, 2026 00:00:00").getTime();
 
 setInterval(function(){
+  const now = new Date().getTime();
+  const distance = targetDate - now;
 
-const now = new Date().getTime()
+  const days    = Math.floor(distance / (1000*60*60*24));
+  const hours   = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+  const minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+  const seconds = Math.floor((distance % (1000*60)) / 1000);
 
-const distance = targetDate - now
-
-const days = Math.floor(distance / (1000*60*60*24))
-const hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60))
-const minutes = Math.floor((distance%(1000*60*60))/(1000*60))
-const seconds = Math.floor((distance%(1000*60))/1000)
-
-document.getElementById("days").innerHTML = days
-document.getElementById("hours").innerHTML = hours
-document.getElementById("minutes").innerHTML = minutes
-document.getElementById("seconds").innerHTML = seconds
-
-},1000)
-
+  document.getElementById("days").innerHTML    = days;
+  document.getElementById("hours").innerHTML   = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+}, 1000);
 </script>
-
 
 </body>
 </html>
