@@ -8,19 +8,19 @@
 # ==========================================================
 #  1. FORZAR HTTPS + WWW  (en un solo redirect 301)
 # ==========================================================
-<IfModule mod_rewrite.c>
-  RewriteEngine On
+#<IfModule mod_rewrite.c>
+#  RewriteEngine On
 
   # Nunca redirigir en entorno local (XAMPP no tiene SSL válido)
-  RewriteCond %{HTTP_HOST} ^localhost [NC,OR]
-  RewriteCond %{HTTP_HOST} ^127\.0\.0\.1 [NC]
-  RewriteRule ^ - [L]
+#  RewriteCond %{HTTP_HOST} ^localhost [NC,OR]
+#  RewriteCond %{HTTP_HOST} ^127\.0\.0\.1 [NC]
+#  RewriteRule ^ - [L]
 
   # Si falta HTTPS **o** falta el www -> mandamos a https://www. de una sola vez
-  RewriteCond %{HTTPS} !=on [OR]
-  RewriteCond %{HTTP_HOST} !^www\. [NC]
-  RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
-  RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
+#  RewriteCond %{HTTPS} !=on [OR]
+#  RewriteCond %{HTTP_HOST} !^www\. [NC]
+#  RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+#  RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
 
   # ---- SI USÁS CLOUDFLARE O UN PROXY ----
   # El proxy habla HTTP con tu server, así que %{HTTPS} siempre da "off"
@@ -31,7 +31,7 @@
   # RewriteCond %{HTTP_HOST} !^www\. [NC]
   # RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
   # RewriteRule ^ https://www.%1%{REQUEST_URI} [L,R=301]
-</IfModule>
+#</IfModule>
 
 
 # ==========================================================

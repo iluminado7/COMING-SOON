@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --gold: #BFAE76;
+}
+
 body {
   background: #000;
   color: #fff;
@@ -46,7 +50,7 @@ body {
   line-height: 1;
   letter-spacing: .09em;
   text-transform: uppercase;
-  font-size: clamp(3rem, 15vw, 11rem);
+  font-size: clamp(2.6rem, 11vw, 8rem);
   display: inline-block;
   white-space: nowrap;           /* que nunca se parta en dos líneas */
   margin-right: -.09em;          /* compensa el hueco que el letter-spacing
@@ -67,10 +71,13 @@ body {
   margin-left: .08em;
 }
 
+
+
+
 /* ================= SERVICES ================= */
 
 .services {
-  color: #8b815c;
+  color: var(--gold);
   text-transform: uppercase;
   opacity: 0.85;
   font-size: 15px;
@@ -78,13 +85,50 @@ body {
   line-height: 1.6;
 }
 
+
+/* ================= AWARD BADGE ================= */
+
+.award {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  padding: 9px 20px;
+  border: 1px solid (--gold);
+  border-radius: 999px;
+}
+
+.award-text {
+  font-weight: 500;
+  color: var(--gold);
+  font-size: clamp(10px, 1.5vw, 13px);
+  letter-spacing: .20em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.flags {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.flag {
+  width: 22px;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.18);
+}
+
 /* ================= TEXTO PRINCIPAL ================= */
 
 .main-text {
-  font-size: 26px;
+  font-size: 22px;
   line-height: 1.5;
   max-width: 720px;
-  font-weight: 800;
+  font-weight: 700;
   text-wrap: balance;
 }
 
@@ -99,8 +143,8 @@ body {
 }
 
 .socials a {
-  color: #8b815c;;
-  border: 1px solid #8b815c;;
+  color: var(--gold);
+  border: 1px solid (--gold);
   width: 46px;
   height: 46px;
   display: flex;
@@ -116,7 +160,7 @@ body {
 }
 
 .socials a:hover {
-  background: #8b815c;;
+  background: #8b815c;
   color: #000;
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 8px 18px rgba(139,107,92,0.25);
@@ -125,7 +169,7 @@ body {
 /* ================= FOOTER ================= */
 
 .footer {
-  color: #8b6b5c;
+  color: var(--gold);
   font-size: 13px;
   letter-spacing: .06em;
   max-width: 680px;
@@ -168,15 +212,18 @@ body {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .main-text {
-    font-size: 24px;
+    font-size: 21px;
   }
+  .award { padding: 8px 16px; gap: 11px; }
+.award-text { letter-spacing: .14em; }
+.flag { width: 19px; }
 }
 
 /* ================= DESKTOP GRANDE (1280px+) ================= */
 
 @media (min-width: 1280px) {
   .main-text {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .footer {
@@ -197,7 +244,7 @@ body {
   }
 
   .main-text {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .main-text br {
@@ -229,7 +276,7 @@ body {
   }
 
   .main-text {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .services {
