@@ -1,0 +1,330 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* ================= CONTENEDOR GENERAL ================= */
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+}
+
+/* ================= LOGO ================= */
+
+
+.brand{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+
+.logo-text{
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  color:#fff;
+  line-height:1;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+ font-size:clamp(4rem, 12vw, 7rem);
+  display:inline-block;
+}
+.logo-text .sc{ font-size:.66em; }              /* versalitas */
+.logo-text .reg{
+  font-size:.85em; font-weight:400;
+  vertical-align:top; position:relative; top:.05em; margin-left:.08em;
+}
+/* ================= SERVICES ================= */
+
+.services {
+  color: #8b6b5c;
+  text-transform: uppercase;
+  opacity: 0.85;
+  font-size: 15px;
+  letter-spacing: 0.24em;
+  line-height: 1.6;
+}
+
+/* ================= TEXTO PRINCIPAL ================= */
+
+.main-text {
+  font-size: 26px;
+  line-height: 1.5;
+  max-width: 720px;
+  font-weight: 800;
+  text-wrap: balance;
+}
+
+/* ================= COUNTDOWN ================= */
+
+.countdown {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #8b6b5c;
+  width: 96px;
+  height: 86px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.countdown-item span {
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+  display: block;
+}
+
+.countdown-item label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8b6b5c;
+  margin-top: 6px;
+  display: block;
+  cursor: default;
+}
+
+/* ================= SOCIALS ================= */
+
+.socials {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.socials a {
+  color: #8b6b5c;
+  border: 1px solid #8b6b5c;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 17px;
+  text-decoration: none;
+  transition: transform .3s ease,
+              background .3s ease,
+              color .3s ease,
+              box-shadow .3s ease;
+}
+
+.socials a:hover {
+  background: #8b6b5c;
+  color: #000;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(139,107,92,0.25);
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  color: #8b6b5c;
+  font-size: 13px;
+  letter-spacing:.06em;
+  max-width:680px;  
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+/* ================= FADE IN ================= */
+
+.container > * {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.container > *:nth-child(1) { animation-delay: 0.2s; }
+.container > *:nth-child(2) { animation-delay: 0.4s; }
+.container > *:nth-child(3) { animation-delay: 0.6s; }
+.container > *:nth-child(4) { animation-delay: 0.8s; }
+.container > *:nth-child(5) { animation-delay: 1.0s; }
+.container > *:nth-child(6) { animation-delay: 1.2s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= TABLET (768px – 1024px) ================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .logo img {
+    width: 200px;
+  }
+
+  .main-text {
+    font-size: 24px;
+  }
+
+  .countdown-item {
+    width: 90px;
+    height: 80px;
+  }
+
+  .countdown-item span {
+    font-size: 1.8rem;
+  }
+}
+
+/* ================= DESKTOP GRANDE (1280px+) ================= */
+
+@media (min-width: 1280px) {
+  .logo img {
+    width: 260px;
+  }
+
+  .main-text {
+    font-size: 30px;
+  }
+
+  .services {
+    font-size: 14px;
+  }
+
+  .countdown-item {
+    width: 108px;
+    height: 96px;
+  }
+
+  .countdown-item span {
+    font-size: 2.4rem;
+  }
+
+  .countdown-item label {
+    font-size: 0.65rem;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
+
+/* ================= MOBILE (max 767px) ================= */
+
+@media (max-width: 767px) {
+  .container {
+    gap: 18px;
+  }
+
+  .logo img {
+    width: 170px;
+  }
+
+  .main-text {
+    font-size: 20px;
+  }
+
+  .main-text br {
+    display: none;
+  }
+
+  .services {
+    font-size: 11px;
+    letter-spacing: 1.8px;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .countdown-item {
+    width: 76px;
+    height: 68px;
+  }
+
+  .countdown-item span {
+    font-size: 1.6rem;
+  }
+
+  .countdown-item label {
+    font-size: 0.55rem;
+    margin-top: 5px;
+  }
+
+  .socials a {
+    width: 42px;
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .footer {
+    font-size: 12px;
+  }
+}
+
+/* ================= MOBILE CHICO (max 380px) ================= */
+
+@media (max-width: 380px) {
+  body {
+    padding: 14px;
+  }
+
+  .logo img {
+    width: 140px;
+  }
+
+  .main-text {
+    font-size: 18px;
+  }
+
+  .countdown {
+    gap: 7px;
+  }
+
+  .countdown-item {
+    width: 64px;
+    height: 58px;
+  }
+
+  .countdown-item span {
+    font-size: 1.3rem;
+  }
+
+  .countdown-item label {
+    font-size: 0.5rem;
+    letter-spacing: 0.12em;
+  }
+
+  .socials {
+    gap: 10px;
+  }
+
+  .socials a {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+}
