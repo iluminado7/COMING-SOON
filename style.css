@@ -6,13 +6,14 @@
 
 body {
   background: #000;
-  color: white;
+  color: #fff;
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  overflow-x: hidden;            /* el logo grande no genera scroll lateral */
 }
 
 /* ================= CONTENEDOR GENERAL ================= */
@@ -28,30 +29,48 @@ body {
   text-align: center;
 }
 
-/* ================= LOGO ================= */
+/* ================= LOGO (texto, ya no imagen) ================= */
 
-
-.brand{ display:flex; flex-direction:column; align-items:center; gap:10px; }
-
-.logo-text{
-  font-family:'Cinzel',serif;
-  font-weight:700;
-  color:#fff;
-  line-height:1;
-  letter-spacing:.09em;
-  text-transform:uppercase;
- font-size:clamp(4rem, 12vw, 7rem);
-  display:inline-block;
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: none;               /* puede pasarse del ancho del container */
 }
-.logo-text .sc{ font-size:.66em; }              /* versalitas */
-.logo-text .reg{
-  font-size:.85em; font-weight:400;
-  vertical-align:top; position:relative; top:.05em; margin-left:.08em;
+
+.logo-text {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 15vw, 11rem);
+  display: inline-block;
+  white-space: nowrap;           /* que nunca se parta en dos líneas */
+  margin-right: -.09em;          /* compensa el hueco que el letter-spacing
+                                    deja tras la última letra (si no, el logo
+                                    queda corrido a la izquierda) */
 }
+
+.logo-text .sc {                 /* versalitas: o, arv */
+  font-size: .66em;
+}
+
+.logo-text .reg {                /* el ® */
+  font-size: .42em;
+  font-weight: 400;
+  vertical-align: top;
+  position: relative;
+  top: .05em;
+  margin-left: .08em;
+}
+
 /* ================= SERVICES ================= */
 
 .services {
-  color: #8b6b5c;
+  color: #8b815c;
   text-transform: uppercase;
   opacity: 0.85;
   font-size: 15px;
@@ -69,48 +88,6 @@ body {
   text-wrap: balance;
 }
 
-/* ================= COUNTDOWN ================= */
-
-.countdown {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-
-.countdown-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #8b6b5c;
-  width: 96px;
-  height: 86px;
-  border-radius: 4px;
-  flex-shrink: 0;
-}
-
-.countdown-item span {
-  font-family: 'Inter', sans-serif;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1;
-  display: block;
-}
-
-.countdown-item label {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #8b6b5c;
-  margin-top: 6px;
-  display: block;
-  cursor: default;
-}
-
 /* ================= SOCIALS ================= */
 
 .socials {
@@ -122,8 +99,8 @@ body {
 }
 
 .socials a {
-  color: #8b6b5c;
-  border: 1px solid #8b6b5c;
+  color: #8b815c;;
+  border: 1px solid #8b815c;;
   width: 46px;
   height: 46px;
   display: flex;
@@ -139,7 +116,7 @@ body {
 }
 
 .socials a:hover {
-  background: #8b6b5c;
+  background: #8b815c;;
   color: #000;
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 8px 18px rgba(139,107,92,0.25);
@@ -150,8 +127,8 @@ body {
 .footer {
   color: #8b6b5c;
   font-size: 13px;
-  letter-spacing:.06em;
-  max-width:680px;  
+  letter-spacing: .06em;
+  max-width: 680px;
   line-height: 1.8;
   opacity: 0.8;
 }
@@ -178,53 +155,28 @@ body {
   }
 }
 
+/* Respeta a quien tiene animaciones reducidas activadas en su SO */
+@media (prefers-reduced-motion: reduce) {
+  .container > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ================= TABLET (768px – 1024px) ================= */
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .logo img {
-    width: 200px;
-  }
-
   .main-text {
     font-size: 24px;
-  }
-
-  .countdown-item {
-    width: 90px;
-    height: 80px;
-  }
-
-  .countdown-item span {
-    font-size: 1.8rem;
   }
 }
 
 /* ================= DESKTOP GRANDE (1280px+) ================= */
 
 @media (min-width: 1280px) {
-  .logo img {
-    width: 260px;
-  }
-
   .main-text {
     font-size: 30px;
-  }
-
-  .services {
-    font-size: 14px;
-  }
-
-  .countdown-item {
-    width: 108px;
-    height: 96px;
-  }
-
-  .countdown-item span {
-    font-size: 2.4rem;
-  }
-
-  .countdown-item label {
-    font-size: 0.65rem;
   }
 
   .footer {
@@ -239,8 +191,9 @@ body {
     gap: 18px;
   }
 
-  .logo img {
-    width: 170px;
+  .logo-text {
+    letter-spacing: .06em;
+    margin-right: -.06em;        /* debe coincidir con el letter-spacing */
   }
 
   .main-text {
@@ -253,25 +206,7 @@ body {
 
   .services {
     font-size: 11px;
-    letter-spacing: 1.8px;
-  }
-
-  .countdown {
-    gap: 10px;
-  }
-
-  .countdown-item {
-    width: 76px;
-    height: 68px;
-  }
-
-  .countdown-item span {
-    font-size: 1.6rem;
-  }
-
-  .countdown-item label {
-    font-size: 0.55rem;
-    margin-top: 5px;
+    letter-spacing: .18em;
   }
 
   .socials a {
@@ -282,6 +217,7 @@ body {
 
   .footer {
     font-size: 12px;
+    letter-spacing: .04em;
   }
 }
 
@@ -292,30 +228,13 @@ body {
     padding: 14px;
   }
 
-  .logo img {
-    width: 140px;
-  }
-
   .main-text {
     font-size: 18px;
   }
 
-  .countdown {
-    gap: 7px;
-  }
-
-  .countdown-item {
-    width: 64px;
-    height: 58px;
-  }
-
-  .countdown-item span {
-    font-size: 1.3rem;
-  }
-
-  .countdown-item label {
-    font-size: 0.5rem;
-    letter-spacing: 0.12em;
+  .services {
+    font-size: 10px;
+    letter-spacing: .14em;
   }
 
   .socials {
