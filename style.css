@@ -160,7 +160,7 @@ body {
 }
 
 .socials a:hover {
-  background: #8b815c;
+  background: #8b6b5c;
   color: #000;
   transform: translateY(-4px) scale(1.05);
   box-shadow: 0 8px 18px rgba(139,107,92,0.25);
