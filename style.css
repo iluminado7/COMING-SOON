@@ -1,296 +1,291 @@
-* {
+/* =====================================================
+   GoHarv. — Coming Soon
+   Color de marca: #C68346
+   ===================================================== */
+
+:root{
+  --oro:      #C68346;              /* color de marca */
+  --oro-soft: rgba(198,131,70,.85); /* texto secundario */
+  --oro-line: rgba(198,131,70,.35); /* bordes y separadores */
+  --blanco:   #ffffff;
+  --negro:    #000000;
+}
+
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --gold: #ebd2a7fb;
-}
-
-body {
-  background: #000;
-  color: #fff;
+body{
+  background: var(--negro);
+  color: var(--blanco);
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  overflow-x: hidden;            /* el logo grande no genera scroll lateral */
+  padding: 30px 20px;
+  overflow-x: hidden;
 }
 
-/* ================= CONTENEDOR GENERAL ================= */
+/* ================= CONTENEDOR ================= */
 
-.container {
+.container{
   width: 100%;
-  max-width: 960px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 24px;
   text-align: center;
 }
 
-/* ================= LOGO (texto, ya no imagen) ================= */
+/* ================= MARCA ================= */
 
-.brand {
+.brand{
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  max-width: none;               /* puede pasarse del ancho del container */
+  gap: 14px;
+  max-width: none;
 }
 
-.logo-text {
+.logo-text{
   font-family: 'Cinzel', serif;
   font-weight: 700;
-  color: #fff;
+  color: var(--blanco);
   line-height: 1;
   letter-spacing: .09em;
   text-transform: uppercase;
-  font-size: clamp(2.6rem, 11vw, 8rem);
+  font-size: clamp(2.1rem, 8.5vw, 6rem);
   display: inline-block;
-  white-space: nowrap;           /* que nunca se parta en dos líneas */
-  margin-right: -.09em;          /* compensa el hueco que el letter-spacing
-                                    deja tras la última letra (si no, el logo
-                                    queda corrido a la izquierda) */
+  white-space: nowrap;
+  margin-right: -.09em;          /* compensa el letter-spacing final */
 }
 
-.logo-text .sc {                 /* versalitas: o, arv */
-  font-size: .66em;
-}
+.logo-text .sc{ font-size: .66em; }   /* versalitas: o, arv */
 
-.logo-text .reg {                /* el ® */
-  font-size: .42em;
+.logo-text .reg{
+  font-size: .30em;
   font-weight: 400;
   vertical-align: top;
   position: relative;
-  top: .05em;
+  top: .10em;
   margin-left: .08em;
 }
 
-
-
-
-/* ================= SERVICES ================= */
-
-.services {
-  color: var(--gold);
+/* Tagline de servicios */
+.services{
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  color: var(--blanco);
   text-transform: uppercase;
-  opacity: 0.85;
-  font-size: 15px;
-  letter-spacing: 0.24em;
-  line-height: 1.6;
-}
-
-
-/* ================= AWARD BADGE ================= */
-
-.award {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  padding: 9px 20px;
-  border: 1px solid (--gold);
-  border-radius: 999px;
-}
-
-.award-text {
-  font-weight: 500;
-  color: var(--gold);
-  font-size: clamp(10px, 1.5vw, 13px);
-  letter-spacing: .20em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-
-.flags {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-
-.flag {
-  width: 22px;
-  height: auto;
-  display: block;
-  border-radius: 2px;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.18);
+  font-size: clamp(10px, 1.5vw, 15px);
+  letter-spacing: .22em;
+  line-height: 1.9;
 }
 
 /* ================= TEXTO PRINCIPAL ================= */
 
-.main-text {
-  font-size: 22px;
-  line-height: 1.5;
-  max-width: 720px;
+.main-text{
+  font-size: clamp(14px, 1.6vw, 18px);
+  line-height: 1.6;
+  max-width: 620px;
   font-weight: 700;
   text-wrap: balance;
 }
 
-/* ================= SOCIALS ================= */
+/* ================= REDES ================= */
 
-.socials {
+.socials{
   display: flex;
-  gap: 14px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 10px;
 }
 
-.socials a {
-  color: var(--gold);
-  border: 1px solid (--gold);
+.socials a{
+  color: var(--oro);
+  border: 1px solid var(--oro-line);
   width: 46px;
   height: 46px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 17px;
+  font-size: 16px;
   text-decoration: none;
   transition: transform .3s ease,
               background .3s ease,
               color .3s ease,
-              box-shadow .3s ease;
+              box-shadow .3s ease,
+              border-color .3s ease;
 }
 
-.socials a:hover {
-  background: #8b6b5c;
-  color: #000;
+.socials a:hover{
+  background: var(--oro);
+  border-color: var(--oro);
+  color: var(--negro);
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(139,107,92,0.25);
+  box-shadow: 0 8px 20px rgba(198,131,70,.30);
+}
+
+/* ================= PREMIO ================= */
+
+.award{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.flags{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.flag{
+  width: 38px;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.15);  /* contorno sutil, si no la
+                                                   bandera de España flota */
+}
+
+.award-text{
+  color: var(--oro-soft);
+  font-size: clamp(11px, 1.25vw, 13.5px);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+/* Línea divisoria corta entre el bloque en inglés y el español */
+.award-text[lang="es"]{
+  padding-top: 20px;
+  position: relative;
+}
+
+.award-text[lang="es"]::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  max-width: 60%;
+  height: 1px;
+  background: var(--oro-line);
 }
 
 /* ================= FOOTER ================= */
 
-.footer {
-  color: var(--gold);
-  font-size: 13px;
-  letter-spacing: .06em;
-  max-width: 680px;
-  line-height: 1.8;
-  opacity: 0.8;
+.footer{
+  color: var(--oro-soft);
+  font-size: clamp(11px, 1.25vw, 13.5px);
+  max-width: 600px;
+  line-height: 1.7;
+  padding-top: 24px;
+  position: relative;
+  width: 100%;
+}
+
+/* Línea divisoria larga arriba del footer */
+.footer::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  background: var(--oro-line);
+}
+
+.footer .copy{
+  display: block;
+  margin-top: 18px;
 }
 
 /* ================= FADE IN ================= */
 
-.container > * {
+.container > *{
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
+  animation: fadeUp .8s ease forwards;
 }
 
-.container > *:nth-child(1) { animation-delay: 0.2s; }
-.container > *:nth-child(2) { animation-delay: 0.4s; }
-.container > *:nth-child(3) { animation-delay: 0.6s; }
-.container > *:nth-child(4) { animation-delay: 0.8s; }
-.container > *:nth-child(5) { animation-delay: 1.0s; }
-.container > *:nth-child(6) { animation-delay: 1.2s; }
+.container > *:nth-child(1){ animation-delay: .2s; }
+.container > *:nth-child(2){ animation-delay: .4s; }
+.container > *:nth-child(3){ animation-delay: .6s; }
+.container > *:nth-child(4){ animation-delay: .8s; }
+.container > *:nth-child(5){ animation-delay: 1.0s; }
 
-@keyframes fadeUp {
-  to {
+@keyframes fadeUp{
+  to{
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Respeta a quien tiene animaciones reducidas activadas en su SO */
-@media (prefers-reduced-motion: reduce) {
-  .container > * {
+@media (prefers-reduced-motion: reduce){
+  .container > *{
     animation: none;
     opacity: 1;
     transform: none;
   }
 }
 
-/* ================= TABLET (768px – 1024px) ================= */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .main-text {
-    font-size: 21px;
-  }
-  .award { padding: 8px 16px; gap: 11px; }
-.award-text { letter-spacing: .14em; }
-.flag { width: 19px; }
-}
-
-/* ================= DESKTOP GRANDE (1280px+) ================= */
-
-@media (min-width: 1280px) {
-  .main-text {
-    font-size: 25px;
-  }
-
-  .footer {
-    font-size: 14px;
-  }
-}
-
 /* ================= MOBILE (max 767px) ================= */
 
-@media (max-width: 767px) {
-  .container {
-    gap: 18px;
-  }
+@media (max-width: 767px){
+  body{ padding: 30px 18px; }
 
-  .logo-text {
+  .container{ gap: 24px; }
+
+  .logo-text{
     letter-spacing: .06em;
-    margin-right: -.06em;        /* debe coincidir con el letter-spacing */
+    margin-right: -.06em;
   }
 
-  .main-text {
-    font-size: 16px;
-  }
+  .services{ letter-spacing: .16em; }
 
-  .main-text br {
-    display: none;
-  }
+  .main-text br{ display: none; }
 
-  .services {
-    font-size: 11px;
-    letter-spacing: .18em;
-  }
+  .socials{ gap: 12px; }
 
-  .socials a {
+  .socials a{
     width: 42px;
     height: 42px;
     font-size: 15px;
   }
 
-  .footer {
-    font-size: 12px;
-    letter-spacing: .04em;
-  }
+  .flag{ width: 32px; }
+
+  .award-text br{ display: none; }   /* que el texto fluya solo */
 }
 
 /* ================= MOBILE CHICO (max 380px) ================= */
 
-@media (max-width: 380px) {
-  body {
-    padding: 14px;
+@media (max-width: 380px){
+  body{ padding: 24px 14px; }
+
+  .services{
+    font-size: 11px;
+    letter-spacing: .12em;
   }
 
-  .main-text {
-    font-size: 14px;
+  .socials{ gap: 9px; }
+
+  .socials a{
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
   }
 
-  .services {
-    font-size: 10px;
-    letter-spacing: .14em;
-  }
-
-  .socials {
-    gap: 10px;
-  }
-
-  .socials a {
-    width: 38px;
-    height: 38px;
-    font-size: 14px;
-  }
+  .flag{ width: 32px; }
 }
